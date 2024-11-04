@@ -1,0 +1,306 @@
+@import "https://theme-park.dev/css/base/gitea/hotline.css";
+@import url('https://fonts.font.im/css?family=Source+Code+Pro');
+
+/* @import "./theme-snowykami-options.css"; */
+:root {
+    --ltyk-border-radius: 2rem;
+    --menu-border-radius: 1rem;
+    --ui-background-color: rgba(64, 64, 64, 0.4);
+    --input-border-radius: 100px;
+    --transition-time: all 0.2s;
+
+    transition: var(--transition-time);
+
+    --ui-border: 1px solid rgba(255, 255, 255, 0.1);
+    /* 半透明灰色背景 */
+    /* contri 颜色 */
+    --color-secondary-alpha-60: rgba(255, 255, 255, 0.3);
+    --color-primary-light-4: #fbcfe8;
+    --color-primary-light-2: #f9a8d4;
+    --color-primary: #f472b6;
+    --color-primary-dark-2: #ec4899;
+    --color-primary-dark-4: #db2777;
+    /* 文字颜色 */
+    --code-background-color: rgba(0, 0, 0, 0.0) !important;
+}
+
+/* 添加全局背景图 */
+body {
+    background: url(../img/bg/1.jpg) !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    background-repeat: repeat-y !important;
+    background-position: center center !important;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+    /* 确保蒙版不会影响页面上的其他元素的交互 */
+    /* 确保蒙版在背景图之下 */
+    z-index: -1;
+}
+
+#navbar {
+    border-bottom: 1px solid var(--color-primary-light-4) !important;
+    background: var(--ui-background-color) !important;
+}
+
+.ui:not(.secondary.stackable.menu, .avatar, .wide, .menu, .header, .segment, .container) {
+    border-radius: var(--ltyk-border-radius) !important;
+}
+
+.ui.header {
+    border-radius: var(--ltyk-border-radius) !important;
+}
+
+.ui.container {
+    border-radius: var(--ltyk-border-radius) !important;
+    background: var(--ui-background-color) !important;
+    backdrop-filter: blur(15px) !important;
+    padding: 1rem !important;
+}
+
+.containers {
+    background: var(--ui-background-color);
+    backdrop-filter: blur(15px);
+    padding: 1rem;
+    border-top-left-radius: var(--ltyk-border-radius) !important;
+    border-top-right-radius: var(--ltyk-border-radius) !important;
+    border-bottom-left-radius: var(--ltyk-border-radius) !important;
+    border-bottom-right-radius: var(--ltyk-border-radius) !important;
+}
+
+/* 一些下拉菜单有问题请在此处添加排除 */
+.ui.form:not(#repo-search-form):not(.list-header-search):not(#user-list-search-form):not(.ignore-dirty) {
+    backdrop-filter: blur(15px) !important;
+    padding: 1rem !important;
+}
+
+.flex-container-nav,
+.flex-container-main,
+#profile-avatar-card {
+    border-radius: var(--ltyk-border-radius) !important;
+    background: var(--ui-background-color) !important;
+    backdrop-filter: blur(15px) !important;
+}
+
+.flex-container-main .header,
+.flex-container-nav .header,
+.ui.container .header,
+.ui.form .header {
+    border-radius: var(--ltyk-border-radius) var(--ltyk-border-radius) 0 0 !important;
+}
+
+.flex-container-main .segment:not(:last-child),
+.flex-container-nav .segment:not(:last-child),
+.ui.container .segment:not(:last-child),
+.ui.form .segment:not(:last-child) {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.flex-container-main .segment:last-child,
+.flex-container-nav .segment:last-child,
+.ui.container .segment:last-child,
+.ui.form .segment:last-child {
+    border-radius: 0 0 var(--ltyk-border-radius) var(--ltyk-border-radius) !important;
+}
+
+/* 后面为header的segment，segment本身要有border ，header保持默认 */
+.flex-container-main .segment:has(+.header),
+.flex-container-nav .segment:has(+.header),
+.ui.container .segment:has(+.header),
+.ui.form .segment:has(+.header) {
+    border-radius: 0 0 var(--ltyk-border-radius) var(--ltyk-border-radius) !important;
+}
+
+/* 特殊处理 */
+.flex-container-main .repository-summary .repository-menu,
+.flex-container-main .repository-summary .segment.language-stats,
+.flex-container-nav .repository-summary .repository-menu,
+.flex-container-nav .repository-summary .segment.language-stats,
+.ui.container .repository-summary .repository-menu,
+.ui.container .repository-summary .segment.language-stats,
+.ui.form .repository-summary .repository-menu,
+.ui.form .repository-summary .segment.language-stats {
+    border-radius: var(--ltyk-border-radius) !important;
+}
+
+.flex-container-main .header,
+.flex-container-nav .header {
+    border-radius: var(--ltyk-border-radius) var(--ltyk-border-radius) 0 0 !important;
+    border: var(--ui-border) !important;
+}
+
+.flex-container-main .segment {
+    border-radius: 0 0 var(--ltyk-border-radius) var(--ltyk-border-radius) !important;
+    border: var(--ui-border) !important;
+}
+
+
+.file-header {
+    border-radius: var(--ltyk-border-radius) var(--ltyk-border-radius) 0 0 !important;
+    border: var(--ui-border) !important;
+}
+
+.file-header+.ui.segment {
+    border-radius: 0 0 var(--ltyk-border-radius) var(--ltyk-border-radius) !important;
+    border: var(--ui-border) !important;
+}
+
+.secondary-nav .ui.container:nth-of-type(1) {
+    border-top-left-radius: var(--ltyk-border-radius) !important;
+    border-top-right-radius: var(--ltyk-border-radius) !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.ui.container:has(+.ui.tabs.divider) {
+    border-bottom-left-radius: var(--ltyk-border-radius) !important;
+    border-bottom-right-radius: var(--ltyk-border-radius) !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+.page-content .container:last-of-type {
+    border-bottom-left-radius: var(--ltyk-border-radius) !important;
+    border-bottom-right-radius: var(--ltyk-border-radius) !important;
+}
+
+.page-content .container:not(.container:nth-of-type(1)):not(.container:last-of-type):not(.secondary-nav>.ui.container) {
+    border-radius: 0 !important;
+}
+
+
+
+.transition.menu,
+.ui.floating.dropdown>.menu,
+.ui.menu.ui.dropdown.menu>.item,
+.ui.dropdown .menu,
+.ui.table {
+    border-radius: var(--menu-border-radius) !important;
+    background: var(--ui-background-color) !important;
+    backdrop-filter: blur(15px) !important;
+    z-index: 10;
+    border: none !important;
+}
+
+
+/* 菜单menu部分 */
+/* 给该元素下的 .item 添加样式 */
+.transition.menu .item:first-child,
+.transition.menu .items:last-child,
+.ui.floating.dropdown>.menu .item:first-child,
+.ui.menu.ui.dropdown.menu>.item:first-child,
+.ui.dropdown .menu .item:first-child {
+    border-radius: var(--menu-border-radius) var(--menu-border-radius) 0 0 !important;
+}
+
+.transition.menu .item:not(:first-child):not(:last-child),
+.ui.floating.dropdown>.menu .item:not(:first-child):not(:last-child),
+.ui.menu.ui.dropdown.menu>.item:not(:first-child):not(:last-child),
+.ui.dropdown .menu .item:not(:first-child):not(:last-child) {
+    border-radius: 0 !important;
+}
+
+.transition.menu .item:last-child,
+.ui.floating.dropdown>.menu .item:last-child,
+.ui.menu.ui.dropdown.menu>.item:last-child,
+.ui.dropdown .menu .item:last-child,
+.ui.floating.dropdown .overflow.menu .scrolling.menu.items {
+    border-radius: 0 0 var(--menu-border-radius) var(--menu-border-radius) !important;
+}
+
+a.item,
+.ui.secondary.vertical.menu>.item {
+    border-radius: var(--ltyk-border-radius) !important;
+}
+
+a.item,
+a.item:hover,
+a.item:active,
+a.item:visited {
+    transition: var(--transition-time) !important;
+}
+
+a.item.truncated-item-container {
+    background: rgba(0, 0, 0, 0.0) !important;
+    backdrop-filter: blur(15px) !important;
+}
+
+.ui.basic.label {
+    background: rgba(0, 0, 0, 0) !important;
+}
+
+.ui.labeled.button {
+    border: none !important;
+    border-radius: var(--ltyk-border-radius) !important;
+    background-color: var(--button-color) !important;
+}
+
+/* 圆形头像 */
+.avatar {
+    border-radius: 50% !important;
+}
+
+footer {
+    display: flex;
+    flex-direction: column !important;
+    z-index: 1;
+}
+
+button {
+    border-radius: var(--ltyk-border-radius) !important;
+    background-color: var(--button-color) !important;
+}
+
+input {
+    margin: 0 0.5rem !important;
+    border-radius: var(--input-border-radius) !important;
+}
+
+input:focus {
+    border-color: #4285f4;
+    /* 聚焦时的边框颜色 */
+    box-shadow: 0 2px 8px rgba(66, 133, 244, 0.3);
+    /* 聚焦时的阴影 */
+    outline: none;
+    /* 移除默认的聚焦样式 */
+}
+
+input::placeholder {
+    color: #aaa;
+    /* 占位符颜色 */
+    opacity: 1;
+    /* 确保占位符颜色生效 */
+}
+
+.selection {
+    margin: 0 0.5rem !important;
+}
+
+/* .ui.menu:not(.vertical) .item {
+    justify-content: center;
+} */
+
+.ui.pagination.menu {
+    border-radius: var(--input-border-radius) !important;
+}
+
+.chroma,
+.markdown:not(code) .highlight pre,
+.markdown:not(code) pre {
+    background-color: rgba(0, 0, 0, 0) !important;
+    color: var(--code-color)
+}
+
+.ui.secondary.pointing.menu .active.item {
+    border-color: rgba(0, 0, 0, 0) !important;
+}
