@@ -28,7 +28,7 @@
 
     /* 底色 */
     --ui-background-color: rgba(64, 64, 64, 0.4);
-    --menu-background-color: rgba(64, 64, 64, 0.7);
+    --menu-background-color: rgba(64, 64, 64, 0.6);
     --navbar-background-color: rgba(0, 0, 0, 0.6);
 
     /* 所有渐变 */
@@ -105,13 +105,29 @@ footer {
     border: var(--border);
 }
 
-/* 菜单 */
+/* 菜单，长条半圆 */
 .ui.action.input>.dropdown:last-child,
 .ui.action.input>.button:last-child,
 .ui.action.input>.buttons:last-child>.button {
     border-radius: var(--border-radius-bar) !important;
 }
 
+/* 二元菜单 */
+】#app .ui.item.menu,
+.ui.item.menu .item:first-child {
+    border-top-left-radius: var(--border-radius-bar) !important;
+    border-bottom-left-radius: var(--border-radius-bar) !important;
+}
+
+.ui.item.menu .item:last-child {
+    border-top-right-radius: var(--border-radius-bar) !important;
+    border-bottom-right-radius: var(--border-radius-bar) !important;
+}
+
+#app .ui.item.menu,
+.ui.item.menu .item.active {
+    color: var(--accent-color) !important;
+}
 
 /* 输入框 */
 .ui.form input,
@@ -126,17 +142,22 @@ footer {
 .ui.form input[type=tel],
 .ui.form input[type=text],
 .ui.form input[type=time],
-.ui.form input[type=url] {
+.ui.form input[type=url],
+.ui.input>input {
     border-radius: var(--border-radius-bar) !important;
-    margin-right: 1rem !important;
+    /* margin-right: 1rem !important; */
 }
 
-/* 主要按钮选中及悬停状态 */
+/* 主要按钮选中及悬停状态，圆角宽按钮 */
 .ui.secondary.menu .active.item,
 .ui.secondary.menu .active.item:hover,
 .dashboard.feeds .filter.menu .item,
-.dashboard.issues .filter.menu .item {
+.dashboard.issues .filter.menu .item,
+.repository .clone-panel>button:first-of-type,
+.ui.buttons .button:first-child,
+.ui.buttons .button:last-child {
     border-radius: var(--border-radius-bar) !important;
+    /* margin-right: 1rem !important; */
 }
 
 .ui.container {
@@ -154,7 +175,7 @@ footer {
 }
 
 /* UI段 */
-.ui.segment {
+.ui.segment:not(.sub-menu.repository-menu):not(.language-stats) {
     border-bottom-left-radius: var(--border-radius-small) !important;
     border-bottom-right-radius: var(--border-radius-small) !important;
 }
@@ -203,6 +224,130 @@ textarea {
 .ui.action.input>.dropdown:not(:first-child),
 .ui.action.input>.button:not(:first-child),
 .ui.action.input>.buttons:not(:first-child)>.button,
-.ui.selection.dropdown {
+.ui.selection.dropdown,
+.ui.active.selection.dropdown {
     border-radius: var(--border-radius-bar) !important;
+}
+
+.ui.selection.dropdown .menu>.item {
+    border: none !important;
+}
+
+/* .ui.action.input .ui.ui.button {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+} */
+
+/* 首页右边的仓库列表，展示actions状态那个 */
+/* .feeds .list ul li:first-child {
+    border-top-left-radius: var(--border-radius-small) !important;
+    border-top-right-radius: var(--border-radius-small) !important;
+} */
+
+/* 首页右边仓库的头部，包含搜索框 */
+.ui.attached:not(.message)+.ui.attached.segment.repos-search:not(.top) {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+/* 首页右边仓库列表翻页按钮们 */
+.ui.pagination.menu.narrow .item {
+    padding: auto !important;
+}
+
+/* 首页底部翻页按钮 */
+.ui.menu {
+    border-radius: var(--border-radius-bar) !important;
+}
+
+/* markdown中代码块总体 */
+.markup .code-block,
+.markup .mermaid-block {
+    box-shadow: var(--box-shadow) !important;
+    background-color: var(--ui-background-color) !important;
+}
+
+/* 代码预览页面代码单行样式 */
+.chroma,
+.markdown:not(code) .highlight pre,
+.markdown:not(code) pre {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+/* 代码块高亮色 */
+:root {
+    /* 背景与文本颜色 */
+    --code-background: #282c34;
+    /* One Dark Pro Italic Vivid 背景色 */
+    --code-color: #c5c5c5;
+    /* One Dark Pro 文本色 */
+
+    /* 错误及高亮 */
+    --code-err-background: #e06c75;
+    --code-err-color: #1e0010;
+    --code-hl-background: #3E4451;
+
+    /* 关键字颜色 */
+    --code-k-color: #c678dd;
+    --code-kc-color: #c678dd;
+    --code-kd-color: #c678dd;
+    --code-kn-color: #c678dd;
+    --code-kp-color: #c678dd;
+    --code-kr-color: #c678dd;
+    --code-kt-color: #c678dd;
+
+    /* 变量与常量颜色 */
+    --code-na-color: #38bdf8;
+    --code-nc-color: #38bdf8;
+    --code-no-color: #38bdf8;
+    --code-nd-color: #38bdf8;
+    --code-ne-color: #38bdf8;
+    --code-nf-color: #38bdf8;
+    --code-nx-color: #38bdf8;
+
+    /* 类型名称颜色 */
+    --code-nt-color: #e06c75;
+
+    /* 字符串与注释颜色 */
+    --code-s-color: #4ade80;
+    --code-sa-color: #4ade80;
+    --code-sb-color: #4ade80;
+    --code-sc-color: #4ade80;
+    --code-dl-color: #4ade80;
+    --code-sd-color: #4ade80;
+    --code-s2-color: #4ade80;
+    --code-se-color: #ae81ff;
+    --code-sh-color: #4ade80;
+    --code-si-color: #4ade80;
+    --code-sx-color: #4ade80;
+    --code-sr-color: #4ade80;
+    --code-s1-color: #4ade80;
+    --code-ss-color: #4ade80;
+
+    /* 数字与符号颜色 */
+    --code-l-color: #ae81ff;
+    --code-ld-color: #e6db74;
+    --code-m-color: #ae81ff;
+    --code-mb-color: #ae81ff;
+    --code-mf-color: #ae81ff;
+    --code-mh-color: #ae81ff;
+    --code-mi-color: #ae81ff;
+
+    /* 操作符颜色 */
+    --code-o-color: #eee;
+    --code-ow-color: #eee;
+
+    /* 注释颜色 */
+    --code-c-color: #888;
+    --code-ch-color: #888;
+    --code-cm-color: #888;
+    --code-c1-color: #888;
+    --code-cs-color: #888;
+    --code-cp-color: #888;
+    --code-cpf-color: #888;
+
+    /* 全局变量与函数颜色 */
+    --code-gd-color: #e06c75;
+    --code-gi-color: #a6e22e;
+    --code-gu-color: #56b6c2;
 }
