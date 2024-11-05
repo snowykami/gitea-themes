@@ -8,6 +8,9 @@
 
     --white: #ffffff;
 
+    --liteyuki-theme: liteyuki-magipoke;
+    /* 主题标识符 */
+
     /* 圆角区 */
     --border-radius-bar: 5rem;
     /* 长条的圆角 */
@@ -306,7 +309,8 @@ pre.code-block {
     /* 确保截图按钮在最上层 */
 }
 
-.tab {
+/* 选项卡 */
+.code-tab {
     position: absolute;
     /* 绝对定位 */
     top: 0;
@@ -327,12 +331,12 @@ pre.code-block {
     /* 确保选项卡在最上层 */
 }
 
-.tab-item {
+.code-tab-item {
     display: flex;
     justify-content: flex-start;
 }
 
-.tab-dot {
+.code-tab-dot {
     height: 1rem;
     width: 1rem;
     border-radius: var(--border-radius-bar) !important;
