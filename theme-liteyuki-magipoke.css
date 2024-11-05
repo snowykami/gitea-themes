@@ -1,0 +1,208 @@
+@import "https://theme-park.dev/css/base/gitea/organizr.css";
+@import "./theme-liteyuki-magipoke-base.css";
+
+/* 暗色系主题 */
+:root {
+    --is-dark-theme: true;
+    --text: #d8d8d8;
+
+    --white: #ffffff;
+
+    /* 圆角区 */
+    --border-radius-bar: 5rem;
+    /* 长条的圆角 */
+    --border-radius-big: 2rem;
+    --border-radius-small: 1rem;
+    --border-radius-menu: 1rem;
+    --border-radius: var(--border-radius-small) !important;
+    /* 覆盖原有 */
+
+    /* 边框 */
+    --border: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* 毛玻璃区 */
+    --backdrop-filter: blur(10px);
+
+    /* 阴影区 */
+    --box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+
+    /* 底色 */
+    --ui-background-color: rgba(64, 64, 64, 0.4);
+    --menu-background-color: rgba(64, 64, 64, 0.7);
+    --navbar-background-color: rgba(0, 0, 0, 0.6);
+
+    /* 所有渐变 */
+    --transition-time: all 0.2s;
+    transition: var(--transition-time) !important;
+}
+
+body {
+    background: url(../img/bg/2.webp) !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    background-repeat: repeat-y !important;
+    background-position: center center !important;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    z-index: -1;
+}
+
+a.item,
+a.item:hover,
+a.item:active,
+a.item:visited {
+    transition: var(--transition-time) !important;
+}
+
+.avatar {
+    border-radius: 50% !important;
+}
+
+/* 足 */
+footer {
+    display: flex;
+    flex-direction: column !important;
+    z-index: 1;
+
+    backdrop-filter: var(--backdrop-filter) !important;
+    background-color: var(--menu-background-color) !important;
+    padding: 1rem !important;
+}
+
+#navbar {
+    border-bottom: var(--border) !important;
+    background: var(--navbar-background-color) !important;
+}
+
+#navbar .item {
+    border-radius: var(--border-radius-bar) !important;
+}
+
+#navbar .item.active {
+    background-color: rgba(var(--accent-color)) !important;
+    color: var(--white) !important;
+}
+
+#navbar .dropdown .item {
+    border-radius: var(--border-radius-menu) !important;
+}
+
+/*  */
+.ui.label,
+.ui.button,
+.ui.basic.buttons .button,
+.ui.basic.button {
+    border-radius: var(--border-radius-bar);
+    border: var(--border);
+}
+
+/* 菜单 */
+.ui.action.input>.dropdown:last-child,
+.ui.action.input>.button:last-child,
+.ui.action.input>.buttons:last-child>.button {
+    border-radius: var(--border-radius-bar) !important;
+}
+
+
+/* 输入框 */
+.ui.form input,
+.ui.form input:not([type]),
+.ui.form input[type=date],
+.ui.form input[type=datetime-local],
+.ui.form input[type=email],
+.ui.form input[type=file],
+.ui.form input[type=number],
+.ui.form input[type=password],
+.ui.form input[type=search],
+.ui.form input[type=tel],
+.ui.form input[type=text],
+.ui.form input[type=time],
+.ui.form input[type=url] {
+    border-radius: var(--border-radius-bar) !important;
+    margin-right: 1rem !important;
+}
+
+/* 主要按钮选中及悬停状态 */
+.ui.secondary.menu .active.item,
+.ui.secondary.menu .active.item:hover,
+.dashboard.feeds .filter.menu .item,
+.dashboard.issues .filter.menu .item {
+    border-radius: var(--border-radius-bar) !important;
+}
+
+.ui.container {
+    background-color: var(--ui-background-color) !important;
+    backdrop-filter: var(--backdrop-filter) !important;
+    border-radius: var(--border-radius-big) !important;
+    box-shadow: var(--box-shadow) !important;
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.ui.header {
+    border-top-left-radius: var(--border-radius-small) !important;
+    border-top-right-radius: var(--border-radius-small) !important;
+}
+
+/* UI段 */
+.ui.segment {
+    border-bottom-left-radius: var(--border-radius-small) !important;
+    border-bottom-right-radius: var(--border-radius-small) !important;
+}
+
+/* 右上角两个下拉菜单颜色 */
+.ui.dropdown .menu {
+    border-radius: var(--border-radius-menu) !important;
+    background-color: var(--menu-background-color) !important;
+    backdrop-filter: var(--backdrop-filter) !important;
+}
+
+/* 右上角两个下拉菜单选中文本颜色 */
+.ui.dropdown .menu .active.item {
+    color: var(--white) !important;
+}
+
+.ui.dropdown .menu .item {
+    border-radius: var(--border-radius-menu) !important;
+}
+
+/* 设置页面左边垂直菜单 */
+.ui.vertical.menu {
+    border-radius: var(--border-radius-menu) !important;
+}
+
+/* 左垂菜单第一个 */
+.ui.vertical.menu>.item.header:first-child {
+    border-top-left-radius: var(--border-radius-menu) !important;
+    border-top-right-radius: var(--border-radius-menu) !important;
+}
+
+/* 顶栏带下边框的按钮，例如仓库，用户，组织 */
+.ui.secondary.pointing.menu .active.item,
+.ui.secondary.pointing.menu .active.item:hover {
+    border: none;
+    background-color: rgba(var(--accent-color)) !important;
+    color: var(--white) !important;
+}
+
+/* 多行文本输入框 */
+textarea {
+    border-radius: var(--border-radius-small) !important;
+}
+
+/* 下拉菜单按钮 */
+.ui.action.input>.dropdown:not(:first-child),
+.ui.action.input>.button:not(:first-child),
+.ui.action.input>.buttons:not(:first-child)>.button,
+.ui.selection.dropdown {
+    border-radius: var(--border-radius-bar) !important;
+}

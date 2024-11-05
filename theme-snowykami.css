@@ -40,7 +40,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, 0);
     pointer-events: none;
     /* 确保蒙版不会影响页面上的其他元素的交互 */
     /* 确保蒙版在背景图之下 */
@@ -89,6 +89,7 @@ body::before {
     border-radius: var(--ltyk-border-radius) !important;
     background: var(--ui-background-color) !important;
     backdrop-filter: blur(15px) !important;
+    padding: 1rem !important;
 }
 
 .flex-container-main .header,
@@ -303,4 +304,15 @@ input::placeholder {
 
 .ui.secondary.pointing.menu .active.item {
     border-color: rgba(0, 0, 0, 0) !important;
+}
+
+.ui.table>thead>tr>th:last-of-type,
+.ui.table>tbody>tr>td:last-of-type,
+.ui.table>tr>td:last-of-type,
+.ui.table>thead>tr:first-child>th:first-child {
+    background: rgba(0, 0, 0, 0.0) !important;
+}
+
+#repo-files-table {
+    border-radius: 1rem !important;
 }
