@@ -30,6 +30,13 @@
     --ui-background-color: rgba(64, 64, 64, 0.4);
     --menu-background-color: rgba(64, 64, 64, 0.6);
     --navbar-background-color: rgba(0, 0, 0, 0.6);
+    --code-background-color: rgba(0, 0, 0, 0.6);
+    --tab-background-color: rgba(0, 0, 0, 0.4);
+
+    /* 选项卡高度 */
+    --code-tab-height: 2.5rem;
+    --code-item-margin: 3rem;
+    --code-copy-button-size: 3rem;
 
     /* 所有渐变 */
     --transition-time: all 0.2s;
@@ -75,7 +82,11 @@ footer {
 
     backdrop-filter: var(--backdrop-filter) !important;
     background-color: var(--menu-background-color) !important;
-    padding: 1rem !important;
+    padding: 0.5rem !important;
+
+    .left-links {
+        margin-bottom: 0.5rem !important;
+    }
 }
 
 #navbar {
@@ -263,8 +274,71 @@ textarea {
 /* markdown中代码块总体 */
 .markup .code-block,
 .markup .mermaid-block {
-    box-shadow: var(--box-shadow) !important;
-    background-color: var(--ui-background-color) !important;
+    /* box-shadow: var(--box-shadow) !important; */
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.3), -4px 0 6px rgba(0, 0, 0, 0.3) !important;
+    background-color: var(--code-background-color) !important;
+}
+
+/* tab-dot代码块前插入的选项卡 */
+pre.code-block {
+    position: relative;
+    /* 使绝对定位基于此元素 */
+    padding-top: var(--code-item-margin);
+    /* 为选项卡预留空间，避免内容被覆盖 */
+}
+
+.code-copy.ui.button {
+    position: absolute;
+    /* 绝对定位 */
+    top: var(--code-item-margin);
+    /* 顶部对齐 */
+    right: 0.5rem;
+    /* 高度 */
+    z-index: 10;
+    /* 确保复制按钮在最上层 */
+}
+
+.code-copy.code-shot.ui.button {
+    /* 顶部对齐 */
+    right: 4rem;
+    /* 右侧对齐 */
+    z-index: 10;
+    /* 确保截图按钮在最上层 */
+}
+
+.tab {
+    position: absolute;
+    /* 绝对定位 */
+    top: 0;
+    /* 顶部对齐 */
+    left: 0;
+    /* 左侧对齐 */
+    width: 100%;
+    /* 宽度铺满父元素 */
+    /* 或者根据需要设置具体宽度 */
+    display: flex;
+    justify-content: flex-start;
+    padding: 0.75rem;
+    /* 内边距 */
+    background-color: var(--tab-background-color) !important;
+    border-top-left-radius: var(--border-radius-small);
+    border-top-right-radius: var(--border-radius-small);
+    z-index: 10;
+    /* 确保选项卡在最上层 */
+}
+
+.tab-item {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.tab-dot {
+    height: 1rem;
+    width: 1rem;
+    border-radius: var(--border-radius-bar) !important;
+    margin-right: 1rem;
+    cursor: pointer;
+    /* 添加鼠标指针 */
 }
 
 /* 代码预览页面代码单行样式 */
