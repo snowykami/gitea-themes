@@ -44,6 +44,9 @@
     /* 所有渐变 */
     --transition-time: all 0.2s;
     transition: var(--transition-time) !important;
+
+    /* 贡献方块颜色 */
+    --color-secondary-alpha-60: rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -188,8 +191,12 @@ footer {
     border-top-right-radius: var(--border-radius-small) !important;
 }
 
+.ui.segment {
+    border: none !important;
+}
+
 /* UI段 */
-.ui.segment:not(.sub-menu.repository-menu):not(.language-stats) {
+.ui.segment:not(.sub-menu.repository-menu):not(.language-stats):not(.tw-py-8):nth-last-of-type(1) {
     border-bottom-left-radius: var(--border-radius-small) !important;
     border-bottom-right-radius: var(--border-radius-small) !important;
 }
@@ -247,6 +254,24 @@ textarea {
     border: none !important;
 }
 
+/* 仓库页面移动端扩展菜单 */
+.tippy-box[data-theme=menu] {
+    background-color: var(--menu-background-color) !important;
+    border-radius: var(--border-radius-small) !important;
+    box-shadow: var(--box-shadow) !important;
+    backdrop-filter: var(--backdrop-filter) !important;
+}
+
+/* 用户贡献方块背景 */
+#user-heatmap {
+    background-color: var(--ui-background-color) !important;
+    backdrop-filter: var(--backdrop-filter) !important;
+    border-radius: var(--border-radius-small) !important;
+    box-shadow: var(--box-shadow) !important;
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
 /* .ui.action.input .ui.ui.button {
     margin-left: 1rem !important;
     margin-right: 1rem !important;
@@ -269,9 +294,25 @@ textarea {
     padding: auto !important;
 }
 
+
 /* 首页底部翻页按钮 */
 .ui.menu {
     border-radius: var(--border-radius-bar) !important;
+}
+
+/* 文件框头部二层复写 */
+.ui.table>thead>tr>th:first-child {
+    border-top-left-radius: var(--border-radius-small) !important;
+}
+
+.ui.table>thead>tr>th:last-child {
+    border-top-right-radius: var(--border-radius-small) !important;
+}
+
+
+/* 文件框总体 */
+table#repo-files-table {
+    border-radius: var(--border-radius-small) !important;
 }
 
 /* markdown中代码块总体 */
@@ -350,6 +391,13 @@ pre.code-block {
 .markdown:not(code) .highlight pre,
 .markdown:not(code) pre {
     background-color: rgba(0, 0, 0, 0) !important;
+}
+
+pre,
+code,
+kbd,
+samp {
+    /* font-family: var(--font-family-code) !important; */
 }
 
 /* 代码块高亮色 */
