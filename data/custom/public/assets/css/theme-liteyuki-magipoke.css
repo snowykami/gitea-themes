@@ -47,6 +47,10 @@
 
     /* 贡献方块颜色 */
     --color-secondary-alpha-60: rgba(0, 0, 0, 0.5);
+
+    /* 一些提示颜色 */
+    --text-green: #4ade80;
+    --text-red: #e06c75;
 }
 
 body {
@@ -397,6 +401,15 @@ pre.code-block {
 /* actions runner界面的标签颜色 */
 .ui.green.label {
     background-color: #4ade80 !important;
+}
+
+/* 提示颜色 */
+.text.green {
+    color: var(--text-green) !important;
+}
+
+.text.red {
+    color: var(--text-red) !important;
 }
 
 pre,
