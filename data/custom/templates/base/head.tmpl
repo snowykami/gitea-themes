@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="{{ctx.Locale.Lang}}" data-theme="{{UserThemeName .SignedUser}}">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{if .Title}}{{.Title}} - {{end}}{{if .Repository.Name}}{{.Repository.Name}} - {{end}}{{AppName}}</title>
+    {{if .ManifestData}}
+    <link rel="manifest" href="data:{{.ManifestData}}">{{end}}
+    <meta name="author" content="{{if .Repository}}{{.Owner.Name}}{{else}}{{MetaAuthor}}{{end}}">
+    <meta name="description"
+        content="{{if .Repository}}{{.Repository.Name}}{{if .Repository.Description}} - {{.Repository.Description}}{{end}}{{else}}{{MetaDescription}}{{end}}">
+    <meta name="keywords" content="{{MetaKeywords}}">
+    <meta name="referrer" content="no-referrer">
+    {{if .GoGetImport}}
+    <meta name="go-import" content="{{.GoGetImport}} git {{.RepoCloneLink.HTTPS}}">
+    <meta name="go-source" content="{{.GoGetImport}} _ {{.GoDocDirectory}} {{.GoDocFile}}">
+    {{end}}
+    {{if and .EnableFeed .FeedURL}}
+    <link rel="alternate" type="application/atom+xml" title="" href="{{.FeedURL}}.atom">
+    <link rel="alternate" type="application/rss+xml" title="" href="{{.FeedURL}}.rss">
+    {{end}}
+    <link rel="icon" href="{{AssetUrlPrefix}}/img/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="{{AssetUrlPrefix}}/img/favicon.png" type="image/png">
+    {{template "base/head_script" .}}
+    <noscript>
+        <style>
+            .dropdown:hover>.menu {
+                display: block;
+            }
+
+            .ui.secondary.menu .dropdown.item>.menu {
+                margin-top: 0;
+            }
+        </style>
+    </noscript>
+    {{template "base/head_opengraph" .}}
+    {{template "base/head_style" .}}
+    {{template "custom/header" .}}
+</head>
+
+<body hx-headers='{"x-csrf-token": "{{.CsrfToken}}"}' hx-swap="outerHTML" hx-ext="morph" hx-push-url="false">
+    {{template "custom/body_outer_pre" .}}
+
+    <div class="full height">
+        <noscript>{{ctx.Locale.Tr "enable_javascript"}}</noscript>
+
+        {{template "custom/body_inner_pre" .}}
+
+        {{if not .PageIsInstall}}
+        {{template "base/head_navbar" .}}
+        {{end}}
+
+        {{if false}}
+        {{/* to make html structure "likely" complete to prevent IDE warnings */}}
+    </div>
+    <div class="snowfall-container"></div>
+</body>
+
+</html>
+{{end}}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // 创建雪花容器
+        const snowfallContainer = document.createElement('div');
+        snowfallContainer.className = 'snowfall-container';
+        document.body.appendChild(snowfallContainer);
+
+        // 编程语言关键字列表
+        const keywords = [
+            // C/C++
+            'int', 'float', 'double', 'char', 'void', 'if', 'else', 'for', 'while', 'do', 'switch', 'case', 'break', 'continue', 'return', 'struct', 'typedef', 'union', 'enum', 'const', 'static', 'extern', 'volatile', 'sizeof', 'goto',
+
+            // Rust
+            'fn', 'let', 'mut', 'const', 'static', 'if', 'else', 'match', 'while', 'for', 'loop', 'break', 'continue', 'return', 'struct', 'enum', 'impl', 'trait', 'mod', 'pub', 'use', 'crate', 'super', 'self', 'as', 'move', 'ref',
+
+            // Java
+            'int', 'float', 'double', 'char', 'boolean', 'if', 'else', 'for', 'while', 'do', 'switch', 'case', 'break', 'continue', 'return', 'class', 'interface', 'extends', 'implements', 'public', 'private', 'protected', 'static', 'final', 'abstract', 'synchronized', 'volatile', 'transient', 'try', 'catch', 'finally', 'throw', 'throws', 'import', 'package', 'new', 'this', 'super', 'instanceof', 'null', 'true', 'false',
+
+            // JavaScript
+            'var', 'let', 'const', 'function', 'return', 'if', 'else', 'for', 'while', 'do', 'switch', 'case', 'break', 'continue', 'try', 'catch', 'finally', 'throw', 'class', 'extends', 'super', 'this', 'new', 'null', 'true', 'false', 'typeof', 'instanceof', 'import', 'export', 'default', 'async', 'await', 'Promise',
+
+            // Python
+            'def', 'return', 'if', 'else', 'elif', 'for', 'while', 'break', 'continue', 'try', 'except', 'finally', 'raise', 'import', 'from', 'as', 'class', 'with', 'lambda', 'yield', 'True', 'False', 'None', 'and', 'or', 'not', 'is', 'in'
+        ];
+
+        // 颜色列表
+        const colors = ['#fda4af', '#f9a8d4', '#f0abfc', '#c084fc', '#a78bfa', '#818cf8', '#60a5fa', '#38bdf8', '#22d3ee', '#2dd4bf', '#34d399', '#4ade80', '#a3e635', '#facc15', '#fbbf24', '#fb923c', '#f87171'];
+
+        // 创建关键字函数
+        function createKeyword(event) {
+            const keyword = document.createElement('div');
+            keyword.className = 'keyword';
+            keyword.textContent = keywords[Math.floor(Math.random() * keywords.length)];
+            keyword.style.left = `${event.pageX}px`;
+            keyword.style.top = `${event.pageY}px`;
+            keyword.style.color = colors[Math.floor(Math.random() * colors.length)];
+            document.body.appendChild(keyword);
+
+            // 在动画结束后移除关键字
+            keyword.addEventListener('animationend', () => {
+                keyword.remove();
+            });
+        }
+
+        // 监听鼠标点击事件
+        document.addEventListener('click', createKeyword);
+
+        // 在pre.code-block前插入macos风格的选项卡
+        // 判断css属性中--theme是否为liteyuki-magipoke，是则插入选项卡
+        window.onload = loadAll;
+    });
+
+    function loadAll() {
+        console.log("loadAll");
+        loadTab();
+        loadSegmentEnd();
+    }
+    // 定义下载截图函数
+    function loadTab() {
+        const rootStyles = getComputedStyle(document.documentElement);
+        const themeValue = rootStyles.getPropertyValue('--liteyuki-theme').trim();
+        if (themeValue === 'liteyuki-magipoke') {
+            document.querySelectorAll('pre.code-block').forEach((pre) => {
+                const tab = document.createElement('div');
+                tab.className = 'code-tab';
+                tab.innerHTML = `
+                <div class="code-tab-item" style="display: flex; justify-content: flex-start;">
+                    <div class="code-tab-dot" style="background-color: #ff5f56;"></div>
+                    <div class="code-tab-dot" style="background-color: #ffbd2e;"></div>
+                    <div class="code-tab-dot" style="background-color: #27c93f;"></div>
+                </div>
+            `;
+                pre.prepend(tab);
+            });
+
+            // 在pre.code-block里面的code元素后插入截图按钮
+            document.querySelectorAll('pre.code-block code').forEach((code) => {
+                const button = document.createElement('button');
+                button.style.right = '4rem'; // 设置为兄弟按钮的位置
+                // 设置为兄弟按钮的大小
+                button.className = 'code-copy code-shot ui button';
+                '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="svg octicon-copy" width="16" height="16" aria-hidden="true"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg>'
+                button.innerHTML = '<svg t="1730818009069" class="svg octicon-copy" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2552" width="16" height="16"><path d="M511.701333 614.698667l-66.218666 66.218666a170.666667 170.666667 0 1 1-60.501334-60.16l66.346667-66.389333-178.56-178.56 60.373333-60.373333 178.56 178.56 178.730667-178.730667 60.330667 60.330667-178.773334 178.773333 66.645334 66.56a170.666667 170.666667 0 1 1-60.330667 60.330667l-66.602667-66.56zM298.666667 853.333333a85.333333 85.333333 0 1 0 0-170.666666 85.333333 85.333333 0 0 0 0 170.666666z m426.666666 0a85.333333 85.333333 0 1 0 0-170.666666 85.333333 85.333333 0 0 0 0 170.666666z m85.333334-298.666666V213.333333H213.333333v341.333334H128V170.666667a42.666667 42.666667 0 0 1 42.666667-42.666667h682.666666a42.666667 42.666667 0 0 1 42.666667 42.666667v384h-85.333333z" fill="#ffffff" p-id="2553"></path></svg>'
+                button.addEventListener('click', () => {
+                    downloadScreenshot(code.parentElement);
+                });
+                code.after(button);
+            });
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function loadSegmentEnd() {
+        // 找到所有.ui.segment
+        const segments = document.querySelectorAll('.ui.segment');
+        segments.forEach((segment) => {
+            // 若后一个元素不为.ui.segment，则在当前元素添加一个类.segment-end
+            if (segment.nextElementSibling && !segment.nextElementSibling.classList.contains('ui.segment')) {
+                segment.classList.add('segment-end');
+            }
+        });
+    }
+
+    function downloadScreenshot(preElement) {
+        if (preElement) {
+            html2canvas(preElement, { scale: 2 }).then((canvas) => {
+                const dataURL = canvas.toDataURL("image/png");
+                const link = document.createElement("a");
+                link.href = dataURL;
+                const id = preElement.getAttribute('id') || 'codeblock';
+                const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+                link.download = `screenshot-${id}-${timestamp}.png`;
+                link.click();
+            }).catch(err => {
+                console.error('截图失败:', err);
+            });
+        }
+    }
+</script>
+
+<style>
+    #snowfall-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+        overflow: hidden;
+    }
+
+    .snowflake {
+        position: absolute;
+        top: -10px;
+        color: white;
+        user-select: none;
+        pointer-events: none;
+        animation-name: fall;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+    }
+
+    @keyframes fall {
+        to {
+            transform: translateY(100vh);
+            opacity: 0;
+        }
+    }
+
+    .keyword {
+        position: absolute;
+        font-size: 20px;
+        font-family: 'Source Code Pro', monospace;
+        animation: enlargeRotate 1s forwards;
+        pointer-events: none;
+    }
+
+    @keyframes enlargeRotate {
+        0% {
+            transform: scale(1) rotate(-45deg);
+            opacity: 1;
+        }
+
+        100% {
+            transform: scale(1.8) rotate(45deg);
+            opacity: 0;
+        }
+    }
+</style>

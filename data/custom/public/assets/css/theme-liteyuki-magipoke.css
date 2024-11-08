@@ -1,0 +1,485 @@
+@import "https://theme-park.dev/css/base/gitea/organizr.css";
+@import "./theme-liteyuki-magipoke-base.css";
+
+/* 暗色系主题 */
+:root {
+    --is-dark-theme: true;
+    --text: #d8d8d8;
+
+    --white: #ffffff;
+
+    --liteyuki-theme: liteyuki-magipoke;
+    /* 主题标识符 */
+
+    /* 圆角区 */
+    --border-radius-bar: 5rem;
+    /* 长条的圆角 */
+    --border-radius-big: 2rem;
+    --border-radius-small: 1rem;
+    --border-radius-menu: 1rem;
+    --border-radius: var(--border-radius-small) !important;
+    /* 覆盖原有 */
+
+    /* 边框 */
+    --border: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* 毛玻璃区 */
+    --backdrop-filter: blur(10px);
+
+    /* 阴影区 */
+    --box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+
+    /* 底色 */
+    --ui-background-color: rgba(64, 64, 64, 0.4);
+    --menu-background-color: rgba(64, 64, 64, 0.6);
+    --navbar-background-color: rgba(0, 0, 0, 0.6);
+    --code-background-color: rgba(0, 0, 0, 0.6);
+    --tab-background-color: rgba(0, 0, 0, 0.4);
+
+    /* 选项卡高度 */
+    --code-tab-height: 2.5rem;
+    --code-item-margin: 3rem;
+    --code-copy-button-size: 3rem;
+
+    /* 所有渐变 */
+    --transition-time: all 0.2s;
+    transition: var(--transition-time) !important;
+
+    /* 贡献方块颜色 */
+    --color-secondary-alpha-60: rgba(0, 0, 0, 0.5);
+}
+
+body {
+    background: url(../img/bg/2.webp) !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    background-repeat: repeat-y !important;
+    background-position: center center !important;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    z-index: -1;
+}
+
+a.item,
+a.item:hover,
+a.item:active,
+a.item:visited {
+    transition: var(--transition-time) !important;
+}
+
+.avatar {
+    border-radius: 50% !important;
+}
+
+/* 足 */
+footer {
+    display: flex;
+    flex-direction: column !important;
+    z-index: 1;
+
+    backdrop-filter: var(--backdrop-filter) !important;
+    background-color: var(--menu-background-color) !important;
+    padding: 0.5rem !important;
+
+    .left-links {
+        margin-bottom: 0.5rem !important;
+    }
+}
+
+#navbar {
+    border-bottom: var(--border) !important;
+    background: var(--navbar-background-color) !important;
+}
+
+#navbar .item {
+    border-radius: var(--border-radius-bar) !important;
+}
+
+#navbar .item.active {
+    background-color: rgba(var(--accent-color)) !important;
+    color: var(--white) !important;
+}
+
+#navbar .dropdown .item {
+    border-radius: var(--border-radius-menu) !important;
+}
+
+/*  */
+.ui.label,
+.ui.button,
+.ui.basic.buttons .button,
+.ui.basic.button {
+    border-radius: var(--border-radius-bar);
+    border: var(--border);
+}
+
+/* 菜单，长条半圆 */
+.ui.action.input>.dropdown:last-child,
+.ui.action.input>.button:last-child,
+.ui.action.input>.buttons:last-child>.button {
+    border-radius: var(--border-radius-bar) !important;
+}
+
+/* 二元菜单 */
+】#app .ui.item.menu,
+.ui.item.menu .item:first-child {
+    border-top-left-radius: var(--border-radius-bar) !important;
+    border-bottom-left-radius: var(--border-radius-bar) !important;
+}
+
+.ui.item.menu .item:last-child {
+    border-top-right-radius: var(--border-radius-bar) !important;
+    border-bottom-right-radius: var(--border-radius-bar) !important;
+}
+
+#app .ui.item.menu,
+.ui.item.menu .item.active {
+    color: var(--accent-color) !important;
+}
+
+/* 输入框 */
+.ui.form input,
+.ui.form input:not([type]),
+.ui.form input[type=date],
+.ui.form input[type=datetime-local],
+.ui.form input[type=email],
+.ui.form input[type=file],
+.ui.form input[type=number],
+.ui.form input[type=password],
+.ui.form input[type=search],
+.ui.form input[type=tel],
+.ui.form input[type=text],
+.ui.form input[type=time],
+.ui.form input[type=url],
+.ui.input>input {
+    border-radius: var(--border-radius-bar) !important;
+    /* margin-right: 1rem !important; */
+}
+
+/* 主要按钮选中及悬停状态，圆角宽按钮 */
+.ui.secondary.menu .active.item,
+.ui.secondary.menu .active.item:hover,
+.dashboard.feeds .filter.menu .item,
+.dashboard.issues .filter.menu .item,
+.repository .clone-panel>button:first-of-type,
+.ui.buttons .button:first-child,
+.ui.buttons .button:last-child {
+    border-radius: var(--border-radius-bar) !important;
+    /* margin-right: 1rem !important; */
+}
+
+.ui.container {
+    background-color: var(--ui-background-color) !important;
+    backdrop-filter: var(--backdrop-filter) !important;
+    border-radius: var(--border-radius-big) !important;
+    box-shadow: var(--box-shadow) !important;
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.ui.header {
+    border-top-left-radius: var(--border-radius-small) !important;
+    border-top-right-radius: var(--border-radius-small) !important;
+}
+
+.ui.segment {
+    border: none !important;
+}
+
+/* UI段 */
+.ui.segment:not(.sub-menu.repository-menu):not(.language-stats):not(.tw-py-8):nth-last-of-type(1),
+.ui.segment.segment-end {
+    border-bottom-left-radius: var(--border-radius-small) !important;
+    border-bottom-right-radius: var(--border-radius-small) !important;
+}
+
+/* 右上角两个下拉菜单颜色 */
+.ui.dropdown .menu {
+    border-radius: var(--border-radius-menu) !important;
+    background-color: var(--menu-background-color) !important;
+    backdrop-filter: var(--backdrop-filter) !important;
+}
+
+/* 右上角两个下拉菜单选中文本颜色 */
+.ui.dropdown .menu .active.item {
+    color: var(--white) !important;
+}
+
+.ui.dropdown .menu .item {
+    border-radius: var(--border-radius-menu) !important;
+}
+
+/* 设置页面左边垂直菜单 */
+.ui.vertical.menu {
+    border-radius: var(--border-radius-menu) !important;
+}
+
+/* 左垂菜单第一个 */
+.ui.vertical.menu>.item.header:first-child {
+    border-top-left-radius: var(--border-radius-menu) !important;
+    border-top-right-radius: var(--border-radius-menu) !important;
+}
+
+/* 顶栏带下边框的按钮，例如仓库，用户，组织 */
+.ui.secondary.pointing.menu .active.item,
+.ui.secondary.pointing.menu .active.item:hover {
+    border: none;
+    background-color: rgba(var(--accent-color)) !important;
+    color: var(--white) !important;
+}
+
+/* 多行文本输入框 */
+textarea {
+    border-radius: var(--border-radius-small) !important;
+}
+
+/* 下拉菜单按钮 */
+.ui.action.input>.dropdown:not(:first-child),
+.ui.action.input>.button:not(:first-child),
+.ui.action.input>.buttons:not(:first-child)>.button,
+.ui.selection.dropdown,
+.ui.active.selection.dropdown {
+    border-radius: var(--border-radius-bar) !important;
+}
+
+.ui.selection.dropdown .menu>.item {
+    border: none !important;
+}
+
+/* 仓库页面移动端扩展菜单 */
+.tippy-box[data-theme=menu] {
+    background-color: var(--menu-background-color) !important;
+    border-radius: var(--border-radius-small) !important;
+    box-shadow: var(--box-shadow) !important;
+    backdrop-filter: var(--backdrop-filter) !important;
+}
+
+/* 用户贡献方块背景 */
+#user-heatmap {
+    background-color: var(--ui-background-color) !important;
+    backdrop-filter: var(--backdrop-filter) !important;
+    border-radius: var(--border-radius-small) !important;
+    box-shadow: var(--box-shadow) !important;
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/* .ui.action.input .ui.ui.button {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+} */
+
+/* 首页右边的仓库列表，展示actions状态那个 */
+/* .feeds .list ul li:first-child {
+    border-top-left-radius: var(--border-radius-small) !important;
+    border-top-right-radius: var(--border-radius-small) !important;
+} */
+
+/* 首页右边仓库的头部，包含搜索框 */
+.ui.attached:not(.message)+.ui.attached.segment.repos-search:not(.top) {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+/* 首页右边仓库列表翻页按钮们 */
+.ui.pagination.menu.narrow .item {
+    padding: auto !important;
+}
+
+
+/* 首页底部翻页按钮 */
+.ui.menu {
+    border-radius: var(--border-radius-bar) !important;
+}
+
+/* 文件框头部二层复写 */
+.ui.table>thead>tr>th:first-child {
+    border-top-left-radius: var(--border-radius-small) !important;
+}
+
+.ui.table>thead>tr>th:last-child {
+    border-top-right-radius: var(--border-radius-small) !important;
+}
+
+
+/* 文件框总体 */
+table#repo-files-table {
+    border-radius: var(--border-radius-small) !important;
+}
+
+/* markdown中代码块总体 */
+.markup .code-block,
+.markup .mermaid-block {
+    /* box-shadow: var(--box-shadow) !important; */
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.3), -4px 0 6px rgba(0, 0, 0, 0.3) !important;
+    background-color: var(--code-background-color) !important;
+}
+
+/* tab-dot代码块前插入的选项卡 */
+pre.code-block {
+    position: relative;
+    /* 使绝对定位基于此元素 */
+    padding-top: var(--code-item-margin);
+    /* 为选项卡预留空间，避免内容被覆盖 */
+}
+
+.code-copy.ui.button {
+    position: absolute;
+    /* 绝对定位 */
+    top: var(--code-item-margin);
+    /* 顶部对齐 */
+    right: 0.5rem;
+    /* 高度 */
+    z-index: 10;
+    /* 确保复制按钮在最上层 */
+}
+
+.code-copy.code-shot.ui.button {
+    /* 顶部对齐 */
+    right: 4rem;
+    /* 右侧对齐 */
+    z-index: 10;
+    /* 确保截图按钮在最上层 */
+}
+
+/* 选项卡 */
+.code-tab {
+    position: absolute;
+    /* 绝对定位 */
+    top: 0;
+    /* 顶部对齐 */
+    left: 0;
+    /* 左侧对齐 */
+    width: 100%;
+    /* 宽度铺满父元素 */
+    /* 或者根据需要设置具体宽度 */
+    display: flex;
+    justify-content: flex-start;
+    padding: 0.75rem;
+    /* 内边距 */
+    background-color: var(--tab-background-color) !important;
+    border-top-left-radius: var(--border-radius-small);
+    border-top-right-radius: var(--border-radius-small);
+    z-index: 10;
+    /* 确保选项卡在最上层 */
+}
+
+.code-tab-item {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.code-tab-dot {
+    height: 1rem;
+    width: 1rem;
+    border-radius: var(--border-radius-bar) !important;
+    margin-right: 1rem;
+    cursor: pointer;
+    /* 添加鼠标指针 */
+}
+
+/* 代码预览页面代码单行样式 */
+.chroma,
+.markdown:not(code) .highlight pre,
+.markdown:not(code) pre {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+/* actions runner界面的标签颜色 */
+.ui.green.label {
+    background-color: #4ade80 !important;
+}
+
+pre,
+code,
+kbd,
+samp {
+    /* font-family: var(--font-family-code) !important; */
+}
+
+/* 代码块高亮色 */
+:root {
+    /* 背景与文本颜色 */
+    --code-background: #282c34;
+    /* One Dark Pro Italic Vivid 背景色 */
+    --code-color: #c5c5c5;
+    /* One Dark Pro 文本色 */
+
+    /* 错误及高亮 */
+    --code-err-background: #e06c75;
+    --code-err-color: #1e0010;
+    --code-hl-background: #3E4451;
+
+    /* 关键字颜色 */
+    --code-k-color: #c678dd;
+    --code-kc-color: #c678dd;
+    --code-kd-color: #c678dd;
+    --code-kn-color: #c678dd;
+    --code-kp-color: #c678dd;
+    --code-kr-color: #c678dd;
+    --code-kt-color: #c678dd;
+
+    /* 变量与常量颜色 */
+    --code-na-color: #38bdf8;
+    --code-nc-color: #38bdf8;
+    --code-no-color: #38bdf8;
+    --code-nd-color: #38bdf8;
+    --code-ne-color: #38bdf8;
+    --code-nf-color: #38bdf8;
+    --code-nx-color: #38bdf8;
+
+    /* 类型名称颜色 */
+    --code-nt-color: #e06c75;
+
+    /* 字符串与注释颜色 */
+    --code-s-color: #4ade80;
+    --code-sa-color: #4ade80;
+    --code-sb-color: #4ade80;
+    --code-sc-color: #4ade80;
+    --code-dl-color: #4ade80;
+    --code-sd-color: #4ade80;
+    --code-s2-color: #4ade80;
+    --code-se-color: #ae81ff;
+    --code-sh-color: #4ade80;
+    --code-si-color: #4ade80;
+    --code-sx-color: #4ade80;
+    --code-sr-color: #4ade80;
+    --code-s1-color: #4ade80;
+    --code-ss-color: #4ade80;
+
+    /* 数字与符号颜色 */
+    --code-l-color: #ae81ff;
+    --code-ld-color: #e6db74;
+    --code-m-color: #ae81ff;
+    --code-mb-color: #ae81ff;
+    --code-mf-color: #ae81ff;
+    --code-mh-color: #ae81ff;
+    --code-mi-color: #ae81ff;
+
+    /* 操作符颜色 */
+    --code-o-color: #eee;
+    --code-ow-color: #eee;
+
+    /* 注释颜色 */
+    --code-c-color: #888;
+    --code-ch-color: #888;
+    --code-cm-color: #888;
+    --code-c1-color: #888;
+    --code-cs-color: #888;
+    --code-cp-color: #888;
+    --code-cpf-color: #888;
+
+    /* 全局变量与函数颜色 */
+    --code-gd-color: #e06c75;
+    --code-gi-color: #a6e22e;
+    --code-gu-color: #56b6c2;
+}
