@@ -1,5 +1,6 @@
 @import "https://theme-park.dev/css/base/gitea/organizr.css";
 @import "./theme-liteyuki-magipoke-base.css";
+@import "./theme-liteyuki-magipoke-color.css";
 
 /* 暗色系主题 */
 :root {
@@ -47,10 +48,6 @@
 
     /* 贡献方块颜色 */
     --color-secondary-alpha-60: rgba(0, 0, 0, 0.5);
-
-    /* 一些提示颜色 */
-    --text-green: #4ade80;
-    --text-red: #e06c75;
 }
 
 body {
@@ -200,8 +197,8 @@ footer {
 }
 
 /* UI段 */
-.ui.segment:not(.sub-menu.repository-menu):not(.language-stats):not(.tw-py-8):nth-last-of-type(1),
-.ui.segment.segment-end {
+.ui.segment:not(.sub-menu.repository-menu):not(.language-stats):not(.tw-py-8):not(.text):not(.item):nth-last-of-type(1),
+.ui.segment.segment-end:not(.text):not(.item) {
     border-bottom-left-radius: var(--border-radius-small) !important;
     border-bottom-right-radius: var(--border-radius-small) !important;
 }
@@ -239,6 +236,12 @@ footer {
     border: none;
     background-color: rgba(var(--accent-color)) !important;
     color: var(--white) !important;
+}
+
+.ui.horizontal.segments>.segment,
+.ui.horizontal.segments>.segment {
+    background: none !important;
+    border: none !important;
 }
 
 /* 多行文本输入框 */
@@ -412,6 +415,10 @@ pre.code-block {
     color: var(--text-red) !important;
 }
 
+.text.purple {
+    color: var(--text-purple) !important;
+}
+
 pre,
 code,
 kbd,
@@ -420,79 +427,3 @@ samp {
 }
 
 /* 代码块高亮色 */
-:root {
-    /* 背景与文本颜色 */
-    --code-background: #282c34;
-    /* One Dark Pro Italic Vivid 背景色 */
-    --code-color: #c5c5c5;
-    /* One Dark Pro 文本色 */
-
-    /* 错误及高亮 */
-    --code-err-background: #e06c75;
-    --code-err-color: #1e0010;
-    --code-hl-background: #3E4451;
-
-    /* 关键字颜色 */
-    --code-k-color: #c678dd;
-    --code-kc-color: #c678dd;
-    --code-kd-color: #c678dd;
-    --code-kn-color: #c678dd;
-    --code-kp-color: #c678dd;
-    --code-kr-color: #c678dd;
-    --code-kt-color: #c678dd;
-
-    /* 变量与常量颜色 */
-    --code-na-color: #38bdf8;
-    --code-nc-color: #38bdf8;
-    --code-no-color: #38bdf8;
-    --code-nd-color: #38bdf8;
-    --code-ne-color: #38bdf8;
-    --code-nf-color: #38bdf8;
-    --code-nx-color: #38bdf8;
-
-    /* 类型名称颜色 */
-    --code-nt-color: #e06c75;
-
-    /* 字符串与注释颜色 */
-    --code-s-color: #4ade80;
-    --code-sa-color: #4ade80;
-    --code-sb-color: #4ade80;
-    --code-sc-color: #4ade80;
-    --code-dl-color: #4ade80;
-    --code-sd-color: #4ade80;
-    --code-s2-color: #4ade80;
-    --code-se-color: #ae81ff;
-    --code-sh-color: #4ade80;
-    --code-si-color: #4ade80;
-    --code-sx-color: #4ade80;
-    --code-sr-color: #4ade80;
-    --code-s1-color: #4ade80;
-    --code-ss-color: #4ade80;
-
-    /* 数字与符号颜色 */
-    --code-l-color: #ae81ff;
-    --code-ld-color: #e6db74;
-    --code-m-color: #ae81ff;
-    --code-mb-color: #ae81ff;
-    --code-mf-color: #ae81ff;
-    --code-mh-color: #ae81ff;
-    --code-mi-color: #ae81ff;
-
-    /* 操作符颜色 */
-    --code-o-color: #eee;
-    --code-ow-color: #eee;
-
-    /* 注释颜色 */
-    --code-c-color: #888;
-    --code-ch-color: #888;
-    --code-cm-color: #888;
-    --code-c1-color: #888;
-    --code-cs-color: #888;
-    --code-cp-color: #888;
-    --code-cpf-color: #888;
-
-    /* 全局变量与函数颜色 */
-    --code-gd-color: #e06c75;
-    --code-gi-color: #a6e22e;
-    --code-gu-color: #56b6c2;
-}

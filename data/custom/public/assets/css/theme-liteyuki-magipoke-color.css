@@ -1,0 +1,371 @@
+:root {
+    /* 背景与文本颜色 */
+    --code-background: #282c34;
+    /* One Dark Pro Italic Vivid 背景色 */
+    --code-color: #c5c5c5;
+    /* One Dark Pro 文本色 */
+
+    /* 错误及高亮 */
+    --code-err-background: #e06c75;
+    --code-err-color: #1e0010;
+    --code-hl-background: #3E4451;
+
+    /* 关键字颜色 */
+    --code-k-color: #c678dd;
+    --code-kc-color: #c678dd;
+    --code-kd-color: #c678dd;
+    --code-kn-color: #c678dd;
+    --code-kp-color: #c678dd;
+    --code-kr-color: #c678dd;
+    --code-kt-color: #c678dd;
+
+    /* 变量与常量颜色 */
+    --code-na-color: #38bdf8;
+    --code-nc-color: #38bdf8;
+    --code-no-color: #38bdf8;
+    --code-nd-color: #38bdf8;
+    --code-ne-color: #38bdf8;
+    --code-nf-color: #38bdf8;
+    --code-nx-color: #38bdf8;
+
+    /* 类型名称颜色 */
+    --code-nt-color: #e06c75;
+
+    /* 字符串与注释颜色 */
+    --code-s-color: #4ade80;
+    --code-sa-color: #4ade80;
+    --code-sb-color: #4ade80;
+    --code-sc-color: #4ade80;
+    --code-dl-color: #4ade80;
+    --code-sd-color: #4ade80;
+    --code-s2-color: #4ade80;
+    --code-se-color: #ae81ff;
+    --code-sh-color: #4ade80;
+    --code-si-color: #4ade80;
+    --code-sx-color: #4ade80;
+    --code-sr-color: #4ade80;
+    --code-s1-color: #4ade80;
+    --code-ss-color: #4ade80;
+
+    /* 数字与符号颜色 */
+    --code-l-color: #ae81ff;
+    --code-ld-color: #e6db74;
+    --code-m-color: #ae81ff;
+    --code-mb-color: #ae81ff;
+    --code-mf-color: #ae81ff;
+    --code-mh-color: #ae81ff;
+    --code-mi-color: #ae81ff;
+
+    /* 操作符颜色 */
+    --code-o-color: #eee;
+    --code-ow-color: #eee;
+
+    /* 注释颜色 */
+    --code-c-color: #888;
+    --code-ch-color: #888;
+    --code-cm-color: #888;
+    --code-c1-color: #888;
+    --code-cs-color: #888;
+    --code-cp-color: #888;
+    --code-cpf-color: #888;
+
+    /* 全局变量与函数颜色 */
+    --code-gd-color: #e06c75;
+    --code-gi-color: #a6e22e;
+    --code-gu-color: #56b6c2;
+
+    /* 界面文本颜色 */
+    /* 一些提示颜色 */
+    --text-green: #4ade80;
+    --text-red: #e06c75;
+    --text-purple: #c678dd;
+    --text-blue: #61afef;
+    --text-orange: #d19a66;
+    --text-yellow: #e5c07b;
+    --text-olive: #98c379;
+    --text-green: #98c379;
+    --text-teal: #56b6c2;
+    --text-cyan: #56b6c2;
+    --text-indigo: #61afef;
+    --text-blue: #61afef;
+    --text-violet: #c678dd;
+    --text-purple: #c678dd;
+    --text-pink: #c678dd;
+    --text-brown: #d19a66;
+    --text-grey: #888;
+    --text-light: #ccc;
+    --text-light-2: #ddd;
+    --text-light-3: #eee;
+    --text-light-grey: #888;
+    --text-gold: #e5c07b;
+    --text-silver: #abb2bf;
+    --text-fuchsia: #c678dd;
+    --text-aqua: #56b6c2;
+    --text-khaki: #d19a66;
+    --text-plum: #c678dd;
+    --text-crimson: #e06c75;
+    --text-coral: #e06c75;
+    --text-turquoise: #56b6c2;
+    --text-amber: #e5c07b;
+    --text-lavender: #c678dd;
+    --text-peach: #d19a66;
+    --text-mint: #98c379;
+    --text-sand: #d19a66;
+    --text-rose: #e06c75;
+    --text-cream: #e5c07b;
+    --text-chocolate: #d19a66;
+    --text-coffee: #d19a66;
+    --text-eggplant: #c678dd;
+    --text-fern: #98c379;
+    --text-iris: #61afef;
+    --text-jade: #56b6c2;
+    --text-lilac: #c678dd;
+    --text-mango: #e5c07b;
+    --text-nectarine: #d19a66;
+    --text-orchid: #c678dd;
+    --text-periwinkle: #61afef;
+    --text-quartz: #abb2bf;
+    --text-ruby: #e06c75;
+    --text-sapphire: #61afef;
+    --text-tangerine: #d19a66;
+    --text-umber: #d19a66;
+    --text-vanilla: #e5c07b;
+    --text-wheat: #d19a66;
+    --text-xanthic: #e5c07b;
+    --text-yam: #d19a66;
+    --text-zucchini: #98c379;
+}
+
+.text.red {
+    color: var(--color-red) !important;
+}
+
+.text.orange {
+    color: var(--color-orange) !important;
+}
+
+.text.yellow {
+    color: var(--color-yellow) !important;
+}
+
+.text.olive {
+    color: var(--color-olive) !important;
+}
+
+.text.green {
+    color: var(--color-green) !important;
+}
+
+.text.teal {
+    color: var(--color-teal) !important;
+}
+
+.text.blue {
+    color: var(--color-blue) !important;
+}
+
+.text.violet {
+    color: var(--color-violet) !important;
+}
+
+.text.purple {
+    color: var(--color-purple) !important;
+}
+
+.text.pink {
+    color: var(--color-pink) !important;
+}
+
+.text.brown {
+    color: var(--color-brown) !important;
+}
+
+.text.black {
+    color: var(--color-text) !important;
+}
+
+.text.grey,
+.text.light {
+    color: var(--color-text-light) !important;
+}
+
+.text.light-2 {
+    color: var(--color-text-light-2) !important;
+}
+
+.text.light-3 {
+    color: var(--color-text-light-3) !important;
+}
+
+.text.light.grey {
+    color: var(--color-grey-light) !important;
+}
+
+.text.gold {
+    color: var(--color-gold) !important;
+}
+
+/* 其他颜色类 */
+.text.indigo {
+    color: var(--color-indigo) !important;
+}
+
+.text.cyan {
+    color: var(--color-cyan) !important;
+}
+
+.text.lime {
+    color: var(--color-lime) !important;
+}
+
+.text.maroon {
+    color: var(--color-maroon) !important;
+}
+
+.text.navy {
+    color: var(--color-navy) !important;
+}
+
+.text.silver {
+    color: var(--color-silver) !important;
+}
+
+.text.fuchsia {
+    color: var(--color-fuchsia) !important;
+}
+
+.text.aqua {
+    color: var(--color-aqua) !important;
+}
+
+.text.khaki {
+    color: var(--color-khaki) !important;
+}
+
+.text.plum {
+    color: var(--color-plum) !important;
+}
+
+.text.crimson {
+    color: var(--color-crimson) !important;
+}
+
+.text.coral {
+    color: var(--color-coral) !important;
+}
+
+.text.turquoise {
+    color: var(--color-turquoise) !important;
+}
+
+.text.amber {
+    color: var(--color-amber) !important;
+}
+
+.text.lavender {
+    color: var(--color-lavender) !important;
+}
+
+.text.peach {
+    color: var(--color-peach) !important;
+}
+
+.text.mint {
+    color: var(--color-mint) !important;
+}
+
+.text.sand {
+    color: var(--color-sand) !important;
+}
+
+.text.rose {
+    color: var(--color-rose) !important;
+}
+
+.text.cream {
+    color: var(--color-cream) !important;
+}
+
+.text.chocolate {
+    color: var(--color-chocolate) !important;
+}
+
+.text.coffee {
+    color: var(--color-coffee) !important;
+}
+
+.text.eggplant {
+    color: var(--color-eggplant) !important;
+}
+
+.text.fern {
+    color: var(--color-fern) !important;
+}
+
+.text.iris {
+    color: var(--color-iris) !important;
+}
+
+.text.jade {
+    color: var(--color-jade) !important;
+}
+
+.text.lilac {
+    color: var(--color-lilac) !important;
+}
+
+.text.mango {
+    color: var(--color-mango) !important;
+}
+
+.text.nectarine {
+    color: var(--color-nectarine) !important;
+}
+
+.text.orchid {
+    color: var(--color-orchid) !important;
+}
+
+.text.periwinkle {
+    color: var(--color-periwinkle) !important;
+}
+
+.text.quartz {
+    color: var(--color-quartz) !important;
+}
+
+.text.ruby {
+    color: var(--color-ruby) !important;
+}
+
+.text.sapphire {
+    color: var(--color-sapphire) !important;
+}
+
+.text.tangerine {
+    color: var(--color-tangerine) !important;
+}
+
+.text.umber {
+    color: var(--color-umber) !important;
+}
+
+.text.vanilla {
+    color: var(--color-vanilla) !important;
+}
+
+.text.wheat {
+    color: var(--color-wheat) !important;
+}
+
+.text.xanthic {
+    color: var(--color-xanthic) !important;
+}
+
+.text.yam {
+    color: var(--color-yam) !important;
+}
+
+.text.zucchini {
+    color: var(--color-zucchini) !important;
+}

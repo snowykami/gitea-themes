@@ -154,12 +154,14 @@
         }
     }
 
+    const notList = [".text.center"]
+
     function loadSegmentEnd() {
         // 找到所有.ui.segment
         const segments = document.querySelectorAll('.ui.segment');
         segments.forEach((segment) => {
-            // 若后一个元素不为.ui.segment，则在当前元素添加一个类.segment-end
-            if (segment.nextElementSibling && !segment.nextElementSibling.classList.contains('ui.segment')) {
+            // 若后一个元素不为.ui.segment或类符合notList中的元素，则添加.segment-end
+            if (!segment.nextElementSibling || !segment.nextElementSibling.matches('.ui.segment') || notList.some((item) => segment.nextElementSibling.matches(item))) {
                 segment.classList.add('segment-end');
             }
         });
