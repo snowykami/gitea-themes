@@ -1,139 +1,170 @@
 :root {
+    --is-dark-theme: false !important;
     /* 背景与文本颜色 */
-    --code-background: #282c34;
+    --code-background: #282c34 !important;
     /* One Dark Pro Italic Vivid 背景色 */
-    --code-color: #c5c5c5;
+    --code-color: #c5c5c5 !important;
     /* One Dark Pro 文本色 */
 
     /* 错误及高亮 */
-    --code-err-background: #e06c75;
-    --code-err-color: #1e0010;
-    --code-hl-background: #3E4451;
+    --code-err-background: #e06c75 !important;
+    --code-err-color: #1e0010 !important;
+    --code-hl-background: #3E4451 !important;
 
     /* 关键字颜色 */
-    --code-k-color: #c678dd;
-    --code-kc-color: #c678dd;
-    --code-kd-color: #c678dd;
-    --code-kn-color: #c678dd;
-    --code-kp-color: #c678dd;
-    --code-kr-color: #c678dd;
-    --code-kt-color: #c678dd;
+    --code-k-color: #c678dd !important;
+    --code-kc-color: #c678dd !important;
+    --code-kd-color: #c678dd !important;
+    --code-kn-color: #c678dd !important;
+    --code-kp-color: #c678dd !important;
+    --code-kr-color: #c678dd !important;
+    --code-kt-color: #c678dd !important;
 
     /* 变量与常量颜色 */
-    --code-na-color: #38bdf8;
-    --code-nc-color: #38bdf8;
-    --code-no-color: #38bdf8;
-    --code-nd-color: #38bdf8;
-    --code-ne-color: #38bdf8;
-    --code-nf-color: #38bdf8;
-    --code-nx-color: #38bdf8;
+    --code-na-color: #38bdf8 !important;
+    --code-nc-color: #38bdf8 !important;
+    --code-no-color: #38bdf8 !important;
+    --code-nd-color: #38bdf8 !important;
+    --code-ne-color: #38bdf8 !important;
+    --code-nf-color: #38bdf8 !important;
+    --code-nx-color: #38bdf8 !important;
 
     /* 类型名称颜色 */
-    --code-nt-color: #e06c75;
+    --code-nt-color: #e06c75 !important;
 
     /* 字符串与注释颜色 */
-    --code-s-color: #4ade80;
-    --code-sa-color: #4ade80;
-    --code-sb-color: #4ade80;
-    --code-sc-color: #4ade80;
-    --code-dl-color: #4ade80;
-    --code-sd-color: #4ade80;
-    --code-s2-color: #4ade80;
-    --code-se-color: #ae81ff;
-    --code-sh-color: #4ade80;
-    --code-si-color: #4ade80;
-    --code-sx-color: #4ade80;
-    --code-sr-color: #4ade80;
-    --code-s1-color: #4ade80;
-    --code-ss-color: #4ade80;
+    --code-s-color: #4ade80 !important;
+    --code-sa-color: #4ade80 !important;
+    --code-sb-color: #4ade80 !important;
+    --code-sc-color: #4ade80 !important;
+    --code-dl-color: #4ade80 !important;
+    --code-sd-color: #4ade80 !important;
+    --code-s2-color: #4ade80 !important;
+    --code-se-color: #ae81ff !important;
+    --code-sh-color: #4ade80 !important;
+    --code-si-color: #4ade80 !important;
+    --code-sx-color: #4ade80 !important;
+    --code-sr-color: #4ade80 !important;
+    --code-s1-color: #4ade80 !important;
+    --code-ss-color: #4ade80 !important;
 
     /* 数字与符号颜色 */
-    --code-l-color: #ae81ff;
-    --code-ld-color: #e6db74;
-    --code-m-color: #ae81ff;
-    --code-mb-color: #ae81ff;
-    --code-mf-color: #ae81ff;
-    --code-mh-color: #ae81ff;
-    --code-mi-color: #ae81ff;
+    --code-l-color: #ae81ff !important;
+    --code-ld-color: #e6db74 !important;
+    --code-m-color: #ae81ff !important;
+    --code-mb-color: #ae81ff !important;
+    --code-mf-color: #ae81ff !important;
+    --code-mh-color: #ae81ff !important;
+    --code-mi-color: #ae81ff !important;
 
     /* 操作符颜色 */
-    --code-o-color: #eee;
-    --code-ow-color: #eee;
+    --code-o-color: #eee !important;
+    --code-ow-color: #eee !important;
 
     /* 注释颜色 */
-    --code-c-color: #888;
-    --code-ch-color: #888;
-    --code-cm-color: #888;
-    --code-c1-color: #888;
-    --code-cs-color: #888;
-    --code-cp-color: #888;
-    --code-cpf-color: #888;
+    --code-c-color: #888 !important;
+    --code-ch-color: #888 !important;
+    --code-cm-color: #888 !important;
+    --code-c1-color: #888 !important;
+    --code-cs-color: #888 !important;
+    --code-cp-color: #888 !important;
+    --code-cpf-color: #888 !important;
 
     /* 全局变量与函数颜色 */
-    --code-gd-color: #e06c75;
-    --code-gi-color: #a6e22e;
-    --code-gu-color: #56b6c2;
+    --code-gd-color: #e06c75 !important;
+    --code-gi-color: #a6e22e !important;
+    --code-gu-color: #56b6c2 !important;
 
     /* 界面文本颜色 */
     /* 一些提示颜色 */
-    --text-green: #4ade80;
-    --text-red: #e06c75;
-    --text-purple: #c678dd;
-    --text-blue: #61afef;
-    --text-orange: #d19a66;
-    --text-yellow: #e5c07b;
-    --text-olive: #98c379;
-    --text-green: #98c379;
-    --text-teal: #56b6c2;
-    --text-cyan: #56b6c2;
-    --text-indigo: #61afef;
-    --text-blue: #61afef;
-    --text-violet: #c678dd;
-    --text-purple: #c678dd;
-    --text-pink: #c678dd;
-    --text-brown: #d19a66;
-    --text-grey: #888;
-    --text-light: #ccc;
-    --text-light-2: #ddd;
-    --text-light-3: #eee;
-    --text-light-grey: #888;
-    --text-gold: #e5c07b;
-    --text-silver: #abb2bf;
-    --text-fuchsia: #c678dd;
-    --text-aqua: #56b6c2;
-    --text-khaki: #d19a66;
-    --text-plum: #c678dd;
-    --text-crimson: #e06c75;
-    --text-coral: #e06c75;
-    --text-turquoise: #56b6c2;
-    --text-amber: #e5c07b;
-    --text-lavender: #c678dd;
-    --text-peach: #d19a66;
-    --text-mint: #98c379;
-    --text-sand: #d19a66;
-    --text-rose: #e06c75;
-    --text-cream: #e5c07b;
-    --text-chocolate: #d19a66;
-    --text-coffee: #d19a66;
-    --text-eggplant: #c678dd;
-    --text-fern: #98c379;
-    --text-iris: #61afef;
-    --text-jade: #56b6c2;
-    --text-lilac: #c678dd;
-    --text-mango: #e5c07b;
-    --text-nectarine: #d19a66;
-    --text-orchid: #c678dd;
-    --text-periwinkle: #61afef;
-    --text-quartz: #abb2bf;
-    --text-ruby: #e06c75;
-    --text-sapphire: #61afef;
-    --text-tangerine: #d19a66;
-    --text-umber: #d19a66;
-    --text-vanilla: #e5c07b;
-    --text-wheat: #d19a66;
-    --text-xanthic: #e5c07b;
-    --text-yam: #d19a66;
-    --text-zucchini: #98c379;
+    --color-green: #4ade80 !important;
+    --color-red: #f87171 !important;
+    --color-purple: #c678dd !important;
+    --color-blue: #61afef !important;
+    --color-orange: #d19a66 !important;
+    --color-yellow: #e5c07b !important;
+    --color-olive: #4ade80 !important;
+    --color-green: #4ade80 !important;
+    --color-teal: #56b6c2 !important;
+    --color-cyan: #56b6c2 !important;
+    --color-indigo: #61afef !important;
+    --color-blue: #61afef !important;
+    --color-violet: #c678dd !important;
+    --color-purple: #c678dd !important;
+    --color-pink: #c678dd !important;
+    --color-brown: #d19a66 !important;
+    /* --color-grey: #888;
+    --color-light: #ccc;
+    --color-light-2: #ddd;
+    --color-light-3: #eee; */
+    --color-light-grey: #888 !important;
+    --color-gold: #e5c07b !important;
+    --color-silver: #abb2bf !important;
+    --color-fuchsia: #c678dd !important;
+    --color-aqua: #56b6c2 !important;
+    --color-khaki: #d19a66 !important;
+    --color-plum: #c678dd !important;
+    --color-crimson: #f87171 !important;
+    --color-coral: #f87171 !important;
+    --color-turquoise: #56b6c2 !important;
+    --color-amber: #e5c07b !important;
+    --color-lavender: #c678dd !important;
+    --color-peach: #d19a66 !important;
+    --color-mint: #4ade80 !important;
+    --color-sand: #d19a66 !important;
+    --color-rose: #f87171 !important;
+    --color-cream: #e5c07b !important;
+    --color-chocolate: #d19a66 !important;
+    --color-coffee: #d19a66 !important;
+    --color-eggplant: #c678dd !important;
+    --color-fern: #4ade80 !important;
+    --color-iris: #61afef !important;
+    --color-jade: #56b6c2 !important;
+    --color-lilac: #c678dd !important;
+    --color-mango: #e5c07b !important;
+    --color-nectarine: #d19a66 !important;
+    --color-orchid: #c678dd !important;
+    --color-periwinkle: #61afef !important;
+    --color-quartz: #abb2bf !important;
+    --color-ruby: #f87171 !important;
+    --color-sapphire: #61afef !important;
+    --color-tangerine: #d19a66 !important;
+    --color-umber: #d19a66 !important;
+    --color-vanilla: #e5c07b !important;
+    --color-wheat: #d19a66 !important;
+    --color-xanthic: #e5c07b !important;
+    --color-yam: #d19a66 !important;
+    --color-zucchini: #4ade80 !important;
+}
+
+:root {
+    color-scheme: light;
+    --is-dark-theme: false;
+    --color-primary: rgba(var(--accent-color));
+    --color-primary-hover: #3677f6;
+    --color-primary-dark-1: #2d70f6;
+    --color-primary-dark-2: #3b7af6;
+    --color-primary-dark-3: #4a84f7;
+    --color-primary-dark-4: #598ef8;
+    --color-primary-dark-5: #6798f8;
+    --color-primary-dark-6: #76a2f9;
+    --color-primary-dark-7: #85acfa;
+    --color-primary-light-1: #0f5cf4;
+    --color-primary-light-2: #0a55ea;
+    --color-primary-light-3: #0a50db;
+    --color-primary-light-4: #094bcd;
+    --color-primary-light-5: #0845be;
+    --color-primary-light-6: #0840af;
+    --color-primary-light-7: #073ba1;
+    --color-primary-alpha-10: rgba(30, 102, 245, 0.1);
+    --color-primary-alpha-20: rgba(30, 102, 245, 0.2);
+    --color-primary-alpha-30: rgba(30, 102, 245, 0.3);
+    --color-primary-alpha-40: rgba(30, 102, 245, 0.4);
+    --color-primary-alpha-50: rgba(30, 102, 245, 0.5);
+    --color-primary-alpha-60: rgba(30, 102, 245, 0.6);
+    --color-primary-alpha-70: rgba(30, 102, 245, 0.7);
+    --color-primary-alpha-80: rgba(30, 102, 245, 0.8);
+    --color-primary-alpha-90: rgba(30, 102, 245, 0.9);
 }
 
 .text.red {

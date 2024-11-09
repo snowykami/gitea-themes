@@ -1,10 +1,12 @@
 @import "https://theme-park.dev/css/base/gitea/organizr.css";
 @import "./theme-liteyuki-magipoke-base.css";
 @import "./theme-liteyuki-magipoke-color.css";
+@import "./theme-liteyuki-magipoke-mobile.css";
 
 /* 暗色系主题 */
 :root {
-    --is-dark-theme: true;
+
+    --is-dark-theme: false !important;
     --text: #d8d8d8;
 
     --white: #ffffff;
@@ -22,7 +24,7 @@
     /* 覆盖原有 */
 
     /* 边框 */
-    --border: 1px solid rgba(255, 255, 255, 0.1);
+    --border: 2px solid rgba(255, 255, 255, 0.1);
 
     /* 毛玻璃区 */
     --backdrop-filter: blur(10px);
@@ -178,6 +180,11 @@ footer {
     /* margin-right: 1rem !important; */
 }
 
+/* 贡献曲线图 */
+.main-graph {
+    border-radius: var(--border-radius-small) !important;
+}
+
 .ui.container {
     background-color: var(--ui-background-color) !important;
     backdrop-filter: var(--backdrop-filter) !important;
@@ -197,8 +204,8 @@ footer {
 }
 
 /* UI段 */
-.ui.segment:not(.sub-menu.repository-menu):not(.language-stats):not(.tw-py-8):not(.text):not(.item):nth-last-of-type(1),
-.ui.segment.segment-end:not(.text):not(.item) {
+.ui.segment:not(.sub-menu.repository-menu):not(.language-stats):not(.tw-py-8):not(.text):not(.item):not(.main-graph):nth-last-of-type(1),
+.ui.segment.segment-end:not(.text):not(.item):not(.main-graph) {
     border-bottom-left-radius: var(--border-radius-small) !important;
     border-bottom-right-radius: var(--border-radius-small) !important;
 }
@@ -401,22 +408,13 @@ pre.code-block {
     background-color: rgba(0, 0, 0, 0) !important;
 }
 
-/* actions runner界面的标签颜色 */
-.ui.green.label {
-    background-color: #4ade80 !important;
+.ui.label {
+    border: var(--border) !important;
 }
 
-/* 提示颜色 */
-.text.green {
-    color: var(--text-green) !important;
-}
-
-.text.red {
-    color: var(--text-red) !important;
-}
-
-.text.purple {
-    color: var(--text-purple) !important;
+/* 小圆角集合，release页面框框 */
+#release-list .release-entry .detail {
+    border-radius: var(--border-radius-small) !important;
 }
 
 pre,
