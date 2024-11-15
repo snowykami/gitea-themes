@@ -204,8 +204,8 @@ footer {
 }
 
 /* UI段 */
-.ui.segment:not(.sub-menu.repository-menu):not(.language-stats):not(.tw-py-8):not(.text):not(.item):not(.main-graph):nth-last-of-type(1),
-.ui.segment.segment-end:not(.text):not(.item):not(.main-graph) {
+.ui.segment:not(.sub-menu.repository-menu):not(.language-stats):not(.tw-py-8):not(.text):not(.item):not(.main-graph):not(.issue-content-right):nth-last-of-type(1),
+.ui.segment.segment-end:not(.text):not(.item):not(.main-graph):not(.issue-content-right) {
     border-bottom-left-radius: var(--border-radius-small) !important;
     border-bottom-right-radius: var(--border-radius-small) !important;
 }
@@ -229,6 +229,10 @@ footer {
 /* 设置页面左边垂直菜单 */
 .ui.vertical.menu {
     border-radius: var(--border-radius-menu) !important;
+}
+
+.issue-content-right {
+    border-radius: var(--border-radius-small) !important;
 }
 
 /* 左垂菜单第一个 */
