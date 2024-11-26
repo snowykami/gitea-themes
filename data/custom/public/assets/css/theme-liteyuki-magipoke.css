@@ -429,3 +429,8 @@ samp {
 }
 
 /* 代码块高亮色 */
+
+/* 修改label-list行距 */
+.label-list .ui.label {
+    margin-bottom: 0.5em; /* 根据需要调整数值 */
+}
