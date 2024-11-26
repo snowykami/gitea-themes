@@ -430,7 +430,14 @@ samp {
 
 /* 代码块高亮色 */
 
-/* 修改label-list行距 */
+/* 修改label-list行距 #3 */
 .label-list .ui.label {
     margin-bottom: 0.5em; /* 根据需要调整数值 */
+}
+
+/* relative-time 加上背景色 #3 */
+.tippy-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem;
 }
