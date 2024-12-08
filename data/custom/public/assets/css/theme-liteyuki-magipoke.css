@@ -401,7 +401,7 @@ pre.code-block {
     height: 1rem;
     width: 1rem;
     border-radius: var(--border-radius-bar) !important;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
     cursor: pointer;
     /* 添加鼠标指针 */
 }
@@ -447,3 +447,35 @@ samp {
 img {
     border-radius: var(--border-radius-small) !important;
 }
+
+/* table的thead要上圆角，tbody最后一个下圆角 */
+table>thead>tr>th:first-child {
+    border-top-left-radius: var(--border-radius-small) !important;
+}
+
+table>thead>tr>th:last-child {
+    border-top-right-radius: var(--border-radius-small) !important;
+}
+
+table>tbody>tr:last-child>td:first-child {
+    border-bottom-left-radius: var(--border-radius-small) !important;
+}
+
+table>tbody>tr:last-child>td:last-child {
+    border-bottom-right-radius: var(--border-radius-small) !important;
+}
+
+table>thead>tr{
+    border-top-left-radius: var(--border-radius-small) !important;
+    border-top-right-radius: var(--border-radius-small) !important;
+}
+
+/* 移除thead顶部的线 */
+table>thead>tr {
+    border-top: none !important;
+}
+
+/* 给表格加阴影 */
+/* table {
+    box-shadow: var(--box-shadow) !important;
+} */
