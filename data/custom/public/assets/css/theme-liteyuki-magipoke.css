@@ -442,3 +442,8 @@ samp {
     border-radius: 0.5rem;
     padding: 0.25rem 0.5rem;
 }
+
+/* 所有图像 */
+img {
+    border-radius: var(--border-radius-small) !important;
+}
