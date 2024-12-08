@@ -224,6 +224,7 @@ footer {
 
 .ui.dropdown .menu .item {
     border-radius: var(--border-radius-menu) !important;
+    background-color: var(--menu-background-color) !important;
 }
 
 /* 设置页面左边垂直菜单 */
