@@ -480,6 +480,13 @@ table>thead>tr {
     border-top: none !important;
 }
 
+/* 添加边界 */
+table{
+    border-radius: var(--border-radius-small) !important;
+    box-shadow: var(--box-shadow) !important;
+    border: var(--border) !important;
+}
+
 /* 给表格加阴影 */
 /* table {
     box-shadow: var(--box-shadow) !important;
