@@ -40,5 +40,47 @@
         Hosted By
         <img src="https://bot.liteyuki.icu/liteyuki.svg" alt="Liteyuki Studio" height="15" title="Liteyuki Studio" />
         <a target="_blank" rel="noopener noreferrer" href="https://liteyuki.icu">Liteyuki Studio</a>
+        <span style="padding-left:30px"></span>
+        <span id="set-bg-btn" class="ui mini label">修改背景图片</span>
     </div>
+    <div id="set-bg-container">
+        <div id="url-input" class="ui small fluid action input tw-flex-1">
+            <input type="text" id="bg-url" placeholder="输入图片 URL">
+            <button class="ui small icon button"  id="save-url-btn">保存</button>
+        </div>
+    </div>
+
+    <script>
+        // 从本地存储读取背景图片 URL
+        const storedBgUrl = localStorage.getItem('backgroundImage');
+        if (storedBgUrl) {
+            document.body.style.backgroundImage = `url('${storedBgUrl}')`;
+        }
+
+        // 获取元素
+        const setBgBtn = document.getElementById('set-bg-btn');
+        const urlInputDiv = document.getElementById('url-input');
+        const bgUrlInput = document.getElementById('bg-url');
+        const saveUrlBtn = document.getElementById('save-url-btn');
+
+        // 点击按钮显示文本框输入
+        setBgBtn.addEventListener('click', () => {
+            urlInputDiv.style.display = 'flex';
+        });
+
+        // 保存背景图片 URL 并应用
+        saveUrlBtn.addEventListener('click', () => {
+            const bgUrl = bgUrlInput.value.trim();
+            if (bgUrl) {
+                // 保存到本地存储
+                localStorage.setItem('backgroundImage', bgUrl);
+                // 更新背景图片
+                document.body.style.backgroundImage = `url('${bgUrl}')`;
+                // 隐藏输入框
+                urlInputDiv.style.display = 'none';
+            } else {
+                alert('请输入有效的 URL！');
+            }
+        });
+    </script>
 </footer>
