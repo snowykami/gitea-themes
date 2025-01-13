@@ -61,7 +61,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    {% comment %} document.addEventListener('DOMContentLoaded', () => {
         // 创建雪花容器
         const snowfallContainer = document.createElement('div');
         snowfallContainer.className = 'snowfall-container';
@@ -110,7 +110,7 @@
         // 在pre.code-block前插入macos风格的选项卡
         // 判断css属性中--theme是否为liteyuki-magipoke，是则插入选项卡
         window.onload = loadAll;
-    });
+    }); {% endcomment %}
 
     function loadAll() {
         console.log("loadAll");
