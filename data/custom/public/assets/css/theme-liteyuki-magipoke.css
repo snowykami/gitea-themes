@@ -403,10 +403,10 @@ pre.code-block {
 }
 
 .code-tab-dot {
-    height: 1rem;
-    width: 1rem;
+    height: 0.8rem;
+    width: 0.8rem;
     border-radius: var(--border-radius-bar) !important;
-    margin-right: 0.5rem;
+    margin-right: 0.65rem;
     cursor: pointer;
     /* 添加鼠标指针 */
 }

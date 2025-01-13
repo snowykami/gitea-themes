@@ -61,56 +61,13 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
-    {% comment %} document.addEventListener('DOMContentLoaded', () => {
-        // 创建雪花容器
-        const snowfallContainer = document.createElement('div');
-        snowfallContainer.className = 'snowfall-container';
-        document.body.appendChild(snowfallContainer);
-
-        // 编程语言关键字列表
-        const keywords = [
-            // C/C++
-            'int', 'float', 'double', 'char', 'void', 'if', 'else', 'for', 'while', 'do', 'switch', 'case', 'break', 'continue', 'return', 'struct', 'typedef', 'union', 'enum', 'const', 'static', 'extern', 'volatile', 'sizeof', 'goto',
-
-            // Rust
-            'fn', 'let', 'mut', 'const', 'static', 'if', 'else', 'match', 'while', 'for', 'loop', 'break', 'continue', 'return', 'struct', 'enum', 'impl', 'trait', 'mod', 'pub', 'use', 'crate', 'super', 'self', 'as', 'move', 'ref',
-
-            // Java
-            'int', 'float', 'double', 'char', 'boolean', 'if', 'else', 'for', 'while', 'do', 'switch', 'case', 'break', 'continue', 'return', 'class', 'interface', 'extends', 'implements', 'public', 'private', 'protected', 'static', 'final', 'abstract', 'synchronized', 'volatile', 'transient', 'try', 'catch', 'finally', 'throw', 'throws', 'import', 'package', 'new', 'this', 'super', 'instanceof', 'null', 'true', 'false',
-
-            // JavaScript
-            'var', 'let', 'const', 'function', 'return', 'if', 'else', 'for', 'while', 'do', 'switch', 'case', 'break', 'continue', 'try', 'catch', 'finally', 'throw', 'class', 'extends', 'super', 'this', 'new', 'null', 'true', 'false', 'typeof', 'instanceof', 'import', 'export', 'default', 'async', 'await', 'Promise',
-
-            // Python
-            'def', 'return', 'if', 'else', 'elif', 'for', 'while', 'break', 'continue', 'try', 'except', 'finally', 'raise', 'import', 'from', 'as', 'class', 'with', 'lambda', 'yield', 'True', 'False', 'None', 'and', 'or', 'not', 'is', 'in'
-        ];
-
-        // 颜色列表
-        const colors = ['#fda4af', '#f9a8d4', '#f0abfc', '#c084fc', '#a78bfa', '#818cf8', '#60a5fa', '#38bdf8', '#22d3ee', '#2dd4bf', '#34d399', '#4ade80', '#a3e635', '#facc15', '#fbbf24', '#fb923c', '#f87171'];
-
-        // 创建关键字函数
-        function createKeyword(event) {
-            const keyword = document.createElement('div');
-            keyword.className = 'keyword';
-            keyword.textContent = keywords[Math.floor(Math.random() * keywords.length)];
-            keyword.style.left = `${event.pageX}px`;
-            keyword.style.top = `${event.pageY}px`;
-            keyword.style.color = colors[Math.floor(Math.random() * colors.length)];
-            document.body.appendChild(keyword);
-
-            // 在动画结束后移除关键字
-            keyword.addEventListener('animationend', () => {
-                keyword.remove();
-            });
-        }
-
-        // 监听鼠标点击事件
-        document.addEventListener('click', createKeyword);
+    document.addEventListener('DOMContentLoaded', () => {
+        // 创建雪花容
 
         // 在pre.code-block前插入macos风格的选项卡
         // 判断css属性中--theme是否为liteyuki-magipoke，是则插入选项卡
         window.onload = loadAll;
-    }); {% endcomment %}
+    });
 
     function loadAll() {
         console.log("loadAll");
