@@ -8,9 +8,7 @@
     --ui-background-color: rgba(64, 64, 64, 0.4);
     --input-border-radius: 100px;
     --transition-time: all 0.2s;
-
     transition: var(--transition-time);
-
     --ui-border: 1px solid rgba(255, 255, 255, 0.1);
     /* 半透明灰色背景 */
     /* contri 颜色 */
@@ -179,8 +177,6 @@ body::before {
     border-radius: 0 !important;
 }
 
-
-
 .transition.menu,
 .ui.floating.dropdown>.menu,
 .ui.menu.ui.dropdown.menu>.item,
@@ -192,7 +188,6 @@ body::before {
     z-index: 10;
     border: none !important;
 }
-
 
 /* 菜单menu部分 */
 /* 给该元素下的 .item 添加样式 */
