@@ -61,20 +61,12 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // 创建雪花容
-
-        // 在pre.code-block前插入macos风格的选项卡
-        // 判断css属性中--theme是否为liteyuki-magipoke，是则插入选项卡
-        window.onload = loadAll;
-    });
-
     function loadAll() {
         console.log("loadAll");
         loadTab();
         loadSegmentEnd();
     }
-    // 定义下载截图函数
+    // 加载选项卡
     function loadTab() {
         const rootStyles = getComputedStyle(document.documentElement);
         const themeValue = rootStyles.getPropertyValue('--liteyuki-theme').trim();
@@ -110,7 +102,15 @@
             return false;
         }
     }
+    
     loadTab();
+    document.addEventListener('DOMContentLoaded', () => {
+        // 在pre.code-block前插入macos风格的选项卡
+        // 判断css属性中--theme是否为liteyuki-magipoke，是则插入选项卡
+        window.onload = loadAll;
+    });
+
+    
 
     const notList = [".text.center", ".issue-content-right"]
 
